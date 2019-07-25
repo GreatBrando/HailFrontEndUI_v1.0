@@ -1,0 +1,83 @@
+<!--- Brandon Franco ----->
+<!---- UI to get JSON data from hail-datasets --->
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title> Hail </title>
+      
+     <!--- Page CSS --->
+    <link rel="stylesheet" href="hailstyle.css">     
+      
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  </head>
+    
+<body>
+   
+<!----- Header ----->
+<div class="jumbotron" sytle="margin-bottom:0px; color:white;">
+         <h2 class="text-center" style="font-size:40px; font-weight:400;"> Hail </h2>
+</div>  
+      
+<div class="container" style="height:1150px;">
+  <div class="row" >
+    <div class="panel panel-default">
+      <div class="panel-heading" style="font-weight:bold">Search</div>
+      <div class="panel-body">
+        <div class="search row">
+          <div class="col-xs-6">
+            <span>Type in annotation:</span>
+            <input type="text" id='searchInput' onkeyup="searchTable()" name="keyword" class="form-control input-sm" placeholder="Enter Annotation....">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-heading" style="font-weight:bold">Database Query
+            <div class="btn-group pull-right">
+                <button class="btn btn-default btn-sm" onclick="copy()" style="height: 27px; font-weight:24">Copy to Clipboard</button>
+            </div>
+        </div>
+      <div class="panel-body">
+        <div class="search row">
+          <div class="col-xs-6">
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Hail Generated Code</label>
+                <textarea readonly class="form-control" id="result" rows="3" width="500px" style="font-family:monospace">db = hl.experimental.DB()      
+mt = db.annotate_rows_db(mt,) </textarea>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    </div>
+<div class="row" style="margin-top:10px"></div>
+    <table id='table1' class="table1 table table-bordered display select" >
+         <div id="header"  class="text-center"></div>
+              <tr id="tableHeader">
+                <th><input id="checkAll" name="addall" type="checkbox" ></th>
+                <th>name</th>
+                <th>description</th>
+                <th>version</th>
+              </tr>
+    </table>
+</div>
+     
+     <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+      
+      
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs-3.3.7/jq-2.2.4/dt-1.10.13/b-1.2.4/b-html5-1.2.4/b-print-1.2.4/fh-3.1.2/r-2.1.1/sc-1.4.2/datatables.min.js"></script>
+    
+    <!---- Javascript that reads JSON file and displays information -->
+    <script src="annotationDataUI.js"></script>
+
+</body>   
+</html>
