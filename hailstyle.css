@@ -1,0 +1,41 @@
+#rowDiv{
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    
+}
+
+input[type="text"]{
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 27px;
+}
+
+
+#searchDatabase{
+    height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+div.search span,
+div.search input[name="keyword"] {
+  display: block;
+  width: 350px;
+}
+
+div.search input[name="keyword"] {
+  margin-top: 4px;
+  margin-left: 0px;
+}
+
+div.panel {
+  margin-bottom: 15px;
+  margin-left: 15px;
+}
+
+div.panel .panel-body p:last-child {
+  margin-bottom: 0;
+}
+
